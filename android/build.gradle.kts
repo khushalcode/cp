@@ -1,4 +1,9 @@
 allprojects {
+    plugins.withId("org.jetbrains.kotlin.android") {
+        extensions.configure<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension> {
+            jvmToolchain(11)
+        }
+    }
     repositories {
         google()
         mavenCentral()
