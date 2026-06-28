@@ -10,8 +10,10 @@ allprojects {
                 targetCompatibility = JavaVersion.VERSION_11
             }
         }
-        extensions.findByType<org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension>()?.apply {
-            jvmToolchain(11)
+        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+            kotlinOptions {
+                jvmTarget = "11"
+            }
         }
     }
 }
